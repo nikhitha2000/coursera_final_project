@@ -1,0 +1,455 @@
+/* src/components/BookingForm/BookingForm.module.css */
+
+/* --- General Layout Styles (Kept as is from previous correct versions) --- */
+.bookingFormStep {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form elements horizontally */
+
+    padding: 23px 0px;
+    gap:23px; /* Padding for the entire step content */
+    width: 100%;
+    box-sizing: border-box;
+}
+.bookingFormStep,  h3, p, label{
+    margin:0px;
+    padding: 0px;;
+}
+
+.stepTitle { /* Style for "DATE / GUEST" text */
+    text-transform: uppercase;
+    color: #000;
+    text-align: center;
+
+    /* Paragraph */
+    font-family: Karla;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px;;
+}
+.header{
+    margin-top: 16px;
+    display:flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+}
+.pageHeading { /* Style for "Select date and no.guest" */
+    color: #333;
+    text-align: center;
+    /* HEADING MENU */
+    font-family: "Markazi Text";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 100% */
+    letter-spacing: 1.6px;
+    align-items: center;}
+
+.backButton {
+    width: 24px; /* Yellow from your color palette */
+    justify-self: start;
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+}
+.backButton:hover {
+    color: #EE9972;
+}
+
+/* --- BookingProgressBar Styles (Kept as is from previous correct versions) --- */
+.progressBar {
+    display: flex;
+    width: 440px;
+    height:48px;
+    align-items: center;
+    margin-top: 64px;;
+}
+
+.step {
+    color: #020202;
+    text-align: center;
+    font-family: Karla;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    display: flex;
+    width: 110px;
+    height: 100%;
+    padding-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.activeStep {
+    color: #333;
+    border-bottom: 2px solid #000;
+}
+
+
+.step:last-child .stepSeparator {
+    display: none;
+}
+
+
+/* REMOVED :global() prefixes and applied styles directly to YOUR CUSTOM CLASS NAMES */
+/* These classes are passed via the 'classNames' prop in BookingFormStep1.js */
+
+.calendarWrapper{
+    display: flex;
+    width: 358px;
+    height: 366px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 6px solid #333;
+    box-sizing: border-box;
+}
+
+/* Styles for the calendar's header (e.g., "JANUARY 2025") */
+.calendarHeader {
+    color: #333;
+    text-align: center;
+    font-family: Karla;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 129.412% */
+    letter-spacing: -0.43px;
+    margin:0px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    margin:0px;
+    padding: 0px;
+    width:200%;
+}
+
+/* Styles for the previous/next month arrow buttons */
+.calendarHeaderControl {
+    padding: 0px;
+    height:52px ;
+}
+
+.calendarHeaderControlIcon{
+    font-size:24px;
+    color: #333;
+}
+.month{
+    width: 100%;
+    height: 115%;
+}
+.monthCell{
+    background-color: var(--Brand-Color-1);
+    padding:0px;
+}
+
+.monthThead{
+    border-top: 1px solid #000000; /* White background for the header */
+    border-bottom: 1px solid #000000
+}
+
+/* Styles for the day-of-the-week labels (S, M, T, W, etc.) */
+.weekday {
+  color: #000000; /* Light gray from your color palette */
+  font-weight: normal;
+}
+
+/* General styles for each day in the calendar */
+.day {
+  color: #ffffff;
+  background-color:var(--Brand-Color-1) ;
+  border-radius: 0;
+  &[data-selected] {
+  background-color: var(--Brand-Color-2); /* Yellow from your color palette */
+  color:#000000;
+  }
+  &[data-outside]{
+    color:#333;
+  }
+}
+
+/* Style for the currently selected day */
+
+/* Style for a day when the mouse hovers over it */
+.day:hover {
+  background-color: var(--Brand-Color-2); /* A faint yellow hover effect */
+}
+
+/* --- NEW Styles for Conditional Summary --- */
+
+.calendarNote { /* Note below the calendar */
+    color: #000;
+    font-family: Karla;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 0px;
+}
+.guestInputWrapper { /* Wrapper for the select dropdown */
+    position: relative;
+    width: 100%;
+    max-width: 220px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the select dropdown */
+    justify-content: center; /* Center the select dropdown vertically */
+
+}
+/* --- No. Guest Input Styles (Restored and Styled) --- */
+.guestLabel { /* "No. Guest" label */
+    font-family: 'Karla', sans-serif;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #333;
+    margin: 0px;
+    gap:0px;
+    padding: 0px;
+    display: flex;
+    justify-self: start;
+}
+
+
+
+.guestSelect { /* The select dropdown itself */
+    display: flex;
+    height: 44px;
+    width: 100%;
+    padding: 0px 16px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0px 0px 16px 16px;
+    border: 1px solid #1B1B1B;
+    background: #EE9972;
+    margin-top: 0px;
+    margin-bottom: 23px;;
+
+/* SHADOW BELOW */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 2px 0px 0px #000;
+    cursor: pointer;
+}
+.guestSelect > option{
+    color: #1B1B1B;
+    font-family: Karla;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 127.273% */
+}
+
+.guestSelect:focus {
+    outline: none;
+    border-color: #F4CE14;
+    box-shadow: 0 0 0 3px rgba(244, 206, 20, 0.2);
+}
+
+.dropdownArrow { /* Custom dropdown arrow */
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    color: #333;
+    pointer-events: none;
+    font-size: 16px;
+}
+/* --- Check Available Button Styles (Restored and Styled) --- */
+.checkAvailableBtn { /* Button style */
+    display: flex;
+    width: 220px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+/* Shadow/Default */
+    box-shadow: 0px 2px 0px 0px #000;
+    border-radius: 16px 16px 0px 0px;
+    border: 1px solid var(--Black, #000);
+    background: var(--Brand-Color-2, #F4CE14);
+    /* Shadow/Default */
+    color: #000;
+    text-align: center;
+
+    /* Button Main */
+    font-family: Karla;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.checkAvailableBtn:hover {
+    background-color: #EE9972;
+}
+
+/* Add these new styles for STEP 2 */
+
+.timeGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates a 4-column grid */
+    gap: 10px; /* Space between buttons */
+    width: 100%;
+    max-width: 400px;
+    margin: 20px 0;
+}
+
+.timeSlotButton {
+    border: 1px solid #333;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Karla', sans-serif;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.timeSlotButton:hover {
+    background-color: #FBDABB; /* Light orange hover from your palette */
+}
+
+/* This style applies to the button that is currently selected */
+.selectedTimeSlot {
+    background-color: #EE9972; /* Orange from your palette */
+    color: white;
+    border-color: #EE9972;
+}
+
+.summaryText {
+    margin-top: 20px;
+    font-family: 'Karla', sans-serif;
+    font-weight: 500;
+    color:#000;
+}
+
+/* Add these new styles to STEP 3 */
+
+.tableOptionsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 64px;
+}
+
+.tableOption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150%;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+}
+
+.availabilityButton {
+    border: 1px solid #333;
+    background-color: white;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.availabilityButton:disabled {
+    background-color: #eee;
+    color: #aaa;
+    border-color: #ddd;
+    cursor: not-allowed;
+}
+
+.selectedTable {
+    background-color: #EE9972; /* Orange from your palette */
+    color: white;
+    border-color: #EE9972;
+}
+
+/* Add these new styles for the information form STEP 4 */
+
+.formField {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 15px;
+}
+
+.formField label {
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.formField input,
+.formField textarea {
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-family: 'Karla', sans-serif;
+    font-size: 1em;
+}
+
+.formField textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.checkboxField {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 15px;
+}
+
+.checkboxField input {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+}
+
+.checkboxField label {
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.errorText {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 4px;
+}
+
+/* Add these styles for the confirmation page */
+
+.confirmationStep {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.confirmationText {
+    font-family: 'Karla', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+}

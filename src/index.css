@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Markazi+Text:wght@400..700&display=swap');
+:root{
+    --Brand-Color-1: #495E57;
+    --Brand-Color-2: #F4CE14;
+    --Brand-Color-3: #EE9972;
+    --Brand-Color-4: #FBDABB;
+    --Brand-Color-5: #EDEFEE;
+    --Brand-Color-6: #333333;
+}
+
+html body {
+  width:100%;
+  display: block;
+  margin:0px;
+  font-family: -apple-system, BlinkMacSystemFont, "Karla""Markazi Text",'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

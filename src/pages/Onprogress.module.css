@@ -1,0 +1,35 @@
+.onProgress{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    border-top-left-radius:64px;
+    border-top-right-radius:64px;
+    border-radius: 64px 64px 0px 0px;
+    box-shadow: -4px -8px 0px 0px #000, 4px -8px 0px 0px #000, 0px -8px 0px 0px #000;
+}
+
+.onProgress h1{
+    color: #F4CE14;
+    font-family: "Markazi Text";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 0%;
+    text-align: center;
+    margin-top: 0px;
+}
+
+.onProgress p{
+    color: #000000;
+    font-family: "Karla";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+    margin-top: 16px;
+    margin-top: 0px;
+}
